@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Database</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h3 align="center">Строго секретно</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ФИО</th>
+        <th>Возраст</th>
+        <th>Страна проживания</th>
+        <th>Семейное положение</th>
+        <th>Судимость</th>
+        <th>Статус</th>
+        <th>Примечание</th>
+        <th>Редактирование</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${people}">
+        <td th:text="${person.name}">value</td>
+        <td th:text="${person.age}">value</td>
+        <td th:text="${person.countryofresidence}">value</td>
+        <td th:text="${person.marriage}">value</td>
+        <td th:text="${person.conviction}">value</td>
+        <td th:text="${person.status}">value</td>
+        <td th:text="${person.commentary}">value</td>
+        <td ><a th:href="@{/people/{id}(id=${person.getId()})}">Редактировать</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+
+<p align="center"><a href="/people/new" class="shine-button">Добавить человека в базу</a>
+
+</body>
+</html>
