@@ -38,10 +38,6 @@ public class UserService implements UserDetailsService {
 
     }
 
-//    public boolean hasSuchUser(User user) {
-//
-//    }
-
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         User user = userRepository.findByLogin(login);

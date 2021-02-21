@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.kireev.FSB_Database_SpringBoot.model.Person;
+import ru.kireev.FSB_Database_SpringBoot.entities.Person;
 import ru.kireev.FSB_Database_SpringBoot.service.PersonService;
 import javax.validation.Valid;
 
