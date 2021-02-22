@@ -15,9 +15,9 @@
         <p class="about" th:text="${'ФИО: ' + person.getName()}">VALUE</p>
         <p class="about" th:text="${'Возраст: ' + person.getAge()}">VALUE</p>
         <p class="about" th:text="${'Страна проживания: ' + person.getCountryofresidence()}">VALUE</p>
-        <p class="about" th:text="${'Семейное положение: ' + person.getMarriage()}">VALUE</p>
-        <p class="about" th:text="${'Судимость: ' + person.getConviction()}">VALUE</p>
-        <p class="about" th:text="${'Статус: ' + person.getStatus()}">VALUE</p>
+        <p class="about" th:text="${'Семейное положение: ' + person.getMarriage().getTitle()}">VALUE</p>
+        <p class="about" th:text="${'Судимость: ' + person.getConviction().getTitle()}">VALUE</p>
+        <p class="about" th:text="${'Статус: ' + person.getStatus().getTitle()}">VALUE</p>
         <p class="about" th:text="${'Примечание: ' + person.getCommentary()}">VALUE</p>
         <br/>
         <p class="button"> <a th:href="@{/people/{id}/edit(id=${person.getId()})}" style="color:white"> Редактировать </a> </p>

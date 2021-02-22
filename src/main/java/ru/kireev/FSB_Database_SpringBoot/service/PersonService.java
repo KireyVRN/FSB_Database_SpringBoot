@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Service
-@Transactional
+//@Transactional
 @RequiredArgsConstructor
 public class PersonService {
 
@@ -24,19 +24,7 @@ public class PersonService {
     }
 
     public void save(Person person) {
-        personRepository.saveAndFlush(person);
-    }
-
-    public void update(int id, Person person) {
-        personRepository.update(
-                person.getName(),
-                person.getAge(),
-                person.getCountryofresidence(),
-                person.getMarriage(),
-                person.getConviction(),
-                person.getStatus(),
-                person.getCommentary(),
-                id);
+        personRepository.save(person);
     }
 
     public void delete(int id) {

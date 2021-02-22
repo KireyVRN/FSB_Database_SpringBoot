@@ -27,17 +27,17 @@ public class Person {
     @Column(name = "countryofresidence")
     private String countryofresidence;
 
-    @NotEmpty(message = "Укажите семейное положение")
     @Column(name = "marriage")
-    private String marriage;
+    @Enumerated(value = EnumType.STRING)
+    private Marriage marriage;
 
-    @NotEmpty(message = "Укажите судимость")
     @Column(name = "conviction")
-    private String conviction;
+    @Enumerated(value = EnumType.STRING)
+    private Conviction conviction;
 
-    @NotEmpty(message = "Укажите статус")
     @Column(name = "status")
-    private String status;
+    @Enumerated(value = EnumType.STRING)
+    private Status status;
 
     @Column(name = "commentary")
     private String commentary;

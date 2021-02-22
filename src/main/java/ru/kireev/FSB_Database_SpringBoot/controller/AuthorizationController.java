@@ -6,6 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import ru.kireev.FSB_Database_SpringBoot.entities.User;
 import ru.kireev.FSB_Database_SpringBoot.service.UserService;
 import javax.validation.Valid;
@@ -13,6 +14,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping
 public class AuthorizationController {
 
     private final UserService userService;

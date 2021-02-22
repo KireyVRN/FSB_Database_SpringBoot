@@ -228,10 +228,6 @@ input[type=text]:placeholder {
   animation-delay: 1s;
 }
 
-
-
-
-
 /* OTHERS */
 
 *:focus {
@@ -247,19 +243,19 @@ input[type=text]:placeholder {
   box-sizing: border-box;
 }
 
+
     </style>
 </head>
 <body>
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-
         <h2 class="active"> Регистрация </h2>
-
         <div class="fadeIn first">
-            <img src="fsb.jpg" id="icon" alt="fsb_pic"/>
-        </div>
 
+            <img src="/static/fsb.jpg" id="icon" alt="fsb_pic"/>
+
+        </div>
         <form th:method="POST" th:action="@{/authorization/newUser}" th:object="${user}">
             <input type="text" class="fadeIn second" th:field="*{login}" id="login" placeholder="Введите логин">
             <div style="color:blue" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Error</div>
