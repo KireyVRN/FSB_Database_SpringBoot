@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
+
 <form class="decor" th:method="POST" th:action="@{/people}" th:object="${person}">
     <div class="form-left-decoration"></div>
     <div class="form-right-decoration"></div>
@@ -25,30 +26,24 @@
         <div style="color:blue" th:if="${#fields.hasErrors('countryofresidence')}" th:errors="*{countryofresidence}">Error</div>
         <br/>
 
-        <label for="marriage"> Судимость: </label>
-        <select name="conviction" th:field="*{marriage}" id="marriage">
+        <label for="marriage"> Семейное положение: </label>
+        <select name="marriage" th:field="*{marriage}" id="marriage">
             <option th:each="m : ${marriage}"
                     th:value="${m}" th:text="${m.title}">VALUE</option>
         </select>
         <br/>
-
-
         <label for="conviction"> Судимость: </label>
         <select name="conviction" th:field="*{conviction}" id="conviction">
             <option th:each="c : ${conviction}"
                     th:value="${c}" th:text="${c.title}">VALUE</option>
         </select>
         <br/>
-
-
-        <label for="status"> Судимость: </label>
+        <label for="status"> Статус: </label>
         <select name="status" th:field="*{status}" id="status">
             <option th:each="s : ${status}"
                     th:value="${s}" th:text="${s.title}">VALUE</option>
         </select>
         <br/>
-
-
 
         <label for="commentary"> Комментарий: </label>
         <input type="text" th:field="*{commentary}" id="commentary"/>

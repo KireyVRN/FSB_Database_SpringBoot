@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="UTF-8">
-    <title>Update person</title>
-    <link rel="stylesheet" href="../static/styles.css">
+    <title>Edit Person</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
@@ -24,50 +23,30 @@
         <br/>
         <label for="countryofresidence"> Страна проживания: </label>
         <input type="text" th:field="*{countryofresidence}" id="countryofresidence"/>
-        <div style="color:blue" th:if="${#fields.hasErrors('countryofresidence')}" th:errors="*{countryofresidence}">Error
-        </div>
+        <div style="color:blue" th:if="${#fields.hasErrors('countryofresidence')}" th:errors="*{countryofresidence}">Error</div>
         <br/>
 
-        <label for="marriage"> Судимость: </label>
-        <select name="conviction" th:field="*{marriage}" id="marriage">
+        <label for="marriage"> Семейное положение: </label>
+        <select name="marriage" th:field="*{marriage}" id="marriage">
             <option th:each="m : ${marriage}"
                     th:value="${m}" th:text="${m.title}">VALUE</option>
         </select>
         <br/>
-
-
         <label for="conviction"> Судимость: </label>
         <select name="conviction" th:field="*{conviction}" id="conviction">
             <option th:each="c : ${conviction}"
                     th:value="${c}" th:text="${c.title}">VALUE</option>
         </select>
         <br/>
-
-
-        <label for="status"> Судимость: </label>
+        <label for="status"> Статус: </label>
         <select name="status" th:field="*{status}" id="status">
             <option th:each="s : ${status}"
                     th:value="${s}" th:text="${s.title}">VALUE</option>
         </select>
         <br/>
 
-
-
-<!--        <label for="marriage"> Семейное положение: </label>-->
-<!--        <input type="text" th:field="*{marriage}" id="marriage"/>-->
-<!--        <div style="color:blue" th:if="${#fields.hasErrors('marriage')}" th:errors="*{marriage}">Error</div>-->
-<!--        <br/>-->
-<!--        <label for="conviction"> Судимость: </label>-->
-<!--        <input type="text" th:field="*{conviction}" id="conviction"/>-->
-<!--        <div style="color:blue" th:if="${#fields.hasErrors('conviction')}" th:errors="*{conviction}">Error</div>-->
-<!--        <br/>-->
-<!--        <label for="status"> Статус: </label>-->
-<!--        <input type="text" th:field="*{status}" id="status"/>-->
-<!--        <div style="color:blue" th:if="${#fields.hasErrors('status')}" th:errors="*{status}">Error</div>-->
-<!--        <br/>-->
         <label for="commentary"> Комментарий: </label>
         <input type="text" th:field="*{commentary}" id="commentary"/>
-        <div style="color:blue" th:if="${#fields.hasErrors('commentary')}" th:errors="*{commentary}">Error</div>
         <br/>
         <input type="submit" value=" Применить изменения "/>
     </div>
