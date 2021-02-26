@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title>Database</title>
     <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/currentDateAndTimeScript.js">timeScript</script>
 </head>
 <body>
+
+<div style="font-family:verdana; font-size:24px" id="timedisplay">DateAndTime</div>
+<p th:text="'Пользователь: ' + ${principal.getName()}">Username</p>
+
 <h3 align="center">Строго секретно</h3>
 <table class="table">
     <thead>
@@ -25,11 +30,11 @@
         <td th:text="${person.name}">value</td>
         <td th:text="${person.age}">value</td>
         <td th:text="${person.countryofresidence}">value</td>
-        <td th:text="${person.marriage}">value</td>
-        <td th:text="${person.conviction}">value</td>
-        <td th:text="${person.status}">value</td>
+        <td th:text="${person.marriage.title}">value</td>
+        <td th:text="${person.conviction.title}">value</td>
+        <td th:text="${person.status.title}">value</td>
         <td th:text="${person.commentary}">value</td>
-        <td ><a th:href="@{/people/{id}(id=${person.getId()})}">Редактировать</a></td>
+        <td><a th:href="@{/people/{id}(id=${person.getId()})}">Редактировать</a></td>
     </tr>
     </tbody>
 </table>
@@ -39,7 +44,9 @@
 <p align="center"><a href="/people/new" class="shine-button">Добавить человека в базу</a>
 
 <form action="/authorization/logout" method="POST" align="center">
-    <p><button type="submit" class="button">Выход</button></p>
+    <p>
+        <button type="submit" class="button">Выход</button>
+    </p>
 </form>
 
 </body>

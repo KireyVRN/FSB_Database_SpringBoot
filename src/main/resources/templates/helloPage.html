@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
     <link rel="stylesheet" type="text/css" href="../static/mainPage.css">
+    <script src="../static/currentDateAndTimeScript.js">timeScript</script>
 </head>
 <body>
+
+<div style="font-family:verdana; font-size:20px">
+    <p id="timedisplay">DateAndTime</p>
+    <p th:text="${weather.temperature}">Temperature</p>
+    <p th:text="${weather.windSpeed}">WindSpeed</p>
+    <p th:text="${weather.humidity}">Humidity</p>
+    <p th:text="${weather.pressure}">Pressure</p>
+</div>
+
+<!--<table class="table">-->
+<!--    <tr style="font-size:24px; font-family:verdana">-->
+<!--        <td id="timedisplay">Текст слева</td>-->
+<!--        <td class="rightcol" th:text="${weather.temperature}">Weather</td>-->
+<!--    </tr>-->
+<!--    <tr style="font-size:24px; font-family:verdana">-->
+<!--        <td ></td>-->
+<!--        <td class="rightcol" th:text="${weather.windSpeed}">Weather</td>-->
+<!--    </tr>-->
+<!--    <tr style="font-size:24px; font-family:verdana">-->
+<!--        <td ></td>-->
+<!--        <td class="rightcol" th:text="${weather.humidity}">Weather</td>-->
+<!--    </tr>-->
+<!--    <tr style="font-size:24px; font-family:verdana">-->
+<!--        <td ></td>-->
+<!--        <td class="rightcol" th:text="${weather.pressure}">Weather</td>-->
+<!--    </tr>-->
+<!--</table>-->
+
 <section>
     <h3>База данных ФСБ</h3>
 </section>

@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>New User</title>
     <link rel="stylesheet" type="text/css" href="../static/newUser.css">
+    <script src="../static/currentDateAndTimeScript.js">timeScript</script>
 </head>
 <body>
+
+<div style="font-family:verdana; font-size:24px" id="timedisplay">DateAndTime</div>
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -22,7 +25,12 @@
             <input type="text" class="fadeIn second" th:field="*{password}" id="password" placeholder="Введите пароль">
             <div style="color:blue" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Error</div>
 
+            <div style="color:blue; margin:10px" th:if="${#fields.hasErrors('global')}">
+                <p th:each="error : ${#fields.errors('global')}" th:text="${error}">Error</p>
+            </div>
+
             <input type="submit" class="fadeIn fourth" value="Зарегистрировать">
+
         </form>
 
     </div>

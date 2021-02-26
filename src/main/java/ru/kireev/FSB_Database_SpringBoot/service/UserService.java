@@ -26,7 +26,9 @@ public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
 
-    private final PasswordEncoder passwordEncoder=new BCryptPasswordEncoder(12);
+    private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(12);
+
+
 
     public void addNewUser(User user) {
 
@@ -36,9 +38,13 @@ public class UserService implements UserDetailsService {
         userRepository.saveAndFlush(user);
     }
 
+    public boolean suchUserExists(User user) {
+       return userRepository.findByLogin(user.getLogin()).isPresent();
+    }
+
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        User user = userRepository.findByLogin(login).orElseThrow(()->new UsernameNotFoundException("Такого пользователя не существует"));
+        User user = userRepository.findByLogin(login).orElseThrow(() -> new UsernameNotFoundException("Такого пользователя не существует"));
 
         return new org.springframework.security.core.userdetails.User(user.getLogin(),
                 user.getPassword(),

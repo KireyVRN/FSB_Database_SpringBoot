@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,10 +19,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserService userService;
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/static/**");
-    }
+//    @Override
+//    public void configure(WebSecurity web) throws Exception {
+//        web.ignoring().antMatchers("/static/**");
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -35,12 +34,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/authorization/newUser").permitAll()
+                .antMatchers("/", "/authorization/newUser", "/h2-console/**", "/static/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin().loginPage("/authorization/login").permitAll()
                 .defaultSuccessUrl("/people")
+                .and().headers().frameOptions().disable()
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/authorization/logout", "POST"))
                 .invalidateHttpSession(true)

@@ -1,6 +1,7 @@
 package ru.kireev.FSB_Database_SpringBoot.entities;
 
 import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 

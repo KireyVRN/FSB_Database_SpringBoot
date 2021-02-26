@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>New person</title>
     <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/currentDateAndTimeScript.js">timeScript</script>
 </head>
 <body>
+
+<div style="font-family:verdana; font-size:24px" id="timedisplay">DateAndTime</div>
 
 <form class="decor" th:method="POST" th:action="@{/people}" th:object="${person}">
     <div class="form-left-decoration"></div>

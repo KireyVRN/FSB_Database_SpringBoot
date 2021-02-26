@@ -2,13 +2,17 @@ package ru.kireev.FSB_Database_SpringBoot.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import ru.kireev.FSB_Database_SpringBoot.entities.User;
+import ru.kireev.FSB_Database_SpringBoot.entities.Weather;
 import ru.kireev.FSB_Database_SpringBoot.service.UserService;
+
+import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 
 
@@ -19,7 +23,9 @@ public class AuthorizationController {
     private final UserService userService;
 
     @GetMapping("/")
-    public String hello() {
+    public String hello(Model model) {
+        Weather weather = new Weather();
+        model.addAttribute("weather", weather);
         return "helloPage";
     }
 
@@ -39,7 +45,12 @@ public class AuthorizationController {
         if (bindingResult.hasErrors())
             return "newUser";
 
-        userService.addNewUser(user);
-        return "redirect:/authorization/login";
+        if (userService.suchUserExists(user)) {
+            bindingResult.addError(new ObjectError("user", "Такой пользователь уже существует"));
+            return "newUser";
+        } else {
+            userService.addNewUser(user);
+            return "redirect:/authorization/login";
+        }
     }
 }

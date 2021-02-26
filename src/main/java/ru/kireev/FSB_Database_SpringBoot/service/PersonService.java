@@ -23,7 +23,7 @@ public class PersonService {
         return personRepository.findById(id).get();
     }
 
-    public void save(Person person) {
+    public void saveOrUpdate(Person person) {
         personRepository.save(person);
     }
 

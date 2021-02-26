@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Person</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/currentDateAndTimeScript.js">timeScript</script>
 </head>
 <body>
+
+<div style="font-family:verdana; font-size:24px" id="timedisplay">DateAndTime</div>
 
 <form class="decor" th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
     <div class="form-left-decoration"></div>

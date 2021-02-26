@@ -6,7 +6,7 @@ body {
 }
 section {
    position: relative;
-   margin-top: 200px;
+   margin-top: 80px;
    padding: 100px 0;
    overflow: hidden;
    background: #fe6637;
@@ -72,3 +72,14 @@ section h3 {
   top: auto;
   height: 100%;
 }
+ table.table  {
+    width:  100%; /* Ширина таблицы */
+    border-spacing: 0; /* Расстояние между ячейками */
+   }
+   table.table td {
+    width: 50%; /* Ширина ячеек */
+    vertical-align: top; /* Выравнивание по верхнему краю */
+   }
+   td.rightcol { /* Правая ячейка */
+    text-align: right; /* Выравнивание по правому краю */
+   }

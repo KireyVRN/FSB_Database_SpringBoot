@@ -1,9 +1,9 @@
 package ru.kireev.FSB_Database_SpringBoot.entities;
 
 
-public enum Conviction {
+public enum Conviction{
 
-    YES("Да"), NOT("Нет");
+    NOT("Не имеет"), YES("Имеет");
 
     private final String title;
 
@@ -14,4 +14,5 @@ public enum Conviction {
     public String getTitle() {
         return title;
     }
+
 }

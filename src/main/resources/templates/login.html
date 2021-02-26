@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="../static/loginPage.css">
+    <script src="../static/currentDateAndTimeScript.js">timeScript</script>
 </head>
 <body>
 
+<div style="font-family:verdana; font-size:24px" id="timedisplay">DateAndTime</div>
+
 <div class="login-page">
     <div class="form">
-        <form class="login-form" method="post" action="/authorization/login">
-            <input type="text" id="username" name="username" placeholder="Пользователь"/>
+
+        <form class="login-form" method="post" action="/authorization/login" th:object="${user}">
+            <input type="text" id="username" name="username"  placeholder="Пользователь"/>
             <input type="password" id="password" name="password" placeholder="Пароль"/>
             <button type="submit">Войти</button>
             <p class="message"><a href="/authorization/newUser">Регистрация</a></p>
         </form>
+
     </div>
 </div>
 

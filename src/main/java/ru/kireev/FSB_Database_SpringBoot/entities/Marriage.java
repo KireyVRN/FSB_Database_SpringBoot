@@ -3,7 +3,7 @@ package ru.kireev.FSB_Database_SpringBoot.entities;
 
 public enum Marriage {
 
-    UNMARRIED("Не женат/замужем"), MARRIED("Женат/Замужем");
+    UNMARRIED("Не в браке"), MARRIED("В браке");
 
     private final String title;
 

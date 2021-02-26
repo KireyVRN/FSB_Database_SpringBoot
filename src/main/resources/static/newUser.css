@@ -6,7 +6,7 @@ html {
 
 body {
   font-family: verdana;
-  height: 100vh;
+  height: 90vh;
 }
 
 a {
@@ -24,8 +24,6 @@ h2 {
   margin: 40px 8px 10px 8px;
   color: green;
 }
-
-
 
 /* STRUCTURE */
 
@@ -45,7 +43,7 @@ h2 {
   background: #fff;
   padding: 30px;
   width: 90%;
-  max-width: 450px;
+  max-width: 400px;
   position: relative;
   padding: 0px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -62,14 +60,11 @@ h2 {
   border-radius: 0 0 10px 10px;
 }
 
-
-
 /* TABS */
 
 h2.active {
   color: #fe6637;
 }
-
 
 /* FORM TYPOGRAPHY*/
 
@@ -136,8 +131,6 @@ input[type=text]:focus {
 input[type=text]:placeholder {
   color: #cccccc;
 }
-
-
 
 /* ANIMATIONS */
 
@@ -228,7 +221,7 @@ input[type=text]:placeholder {
 }
 
 #icon {
-  width:60%;
+  width:83%;
   margin: 30px;
 }
 

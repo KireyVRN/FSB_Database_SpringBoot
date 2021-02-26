@@ -7,7 +7,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.kireev.FSB_Database_SpringBoot.entities.*;
 import ru.kireev.FSB_Database_SpringBoot.service.PersonService;
+
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.Arrays;
 
 
@@ -19,8 +21,9 @@ public class PersonController {
     private final PersonService personService;
 
     @GetMapping()
-    public String getAllPeople(Model model) {
+    public String getAllPeople(Model model, Principal principal) {
         model.addAttribute("people", personService.getAllPeople());
+        model.addAttribute("principal",principal);
         return "allPeople";
     }
 
@@ -47,7 +50,7 @@ public class PersonController {
 
         if (bindingResult.hasErrors())
             return "newPerson";
-        personService.save(person);
+        personService.saveOrUpdate(person);
         return "redirect:/people";
     }
 
@@ -73,7 +76,7 @@ public class PersonController {
         if (bindingResult.hasErrors())
             return "editPerson";
 
-        personService.save(person);
+        personService.saveOrUpdate(person);
         return "redirect:/people";
     }
 
