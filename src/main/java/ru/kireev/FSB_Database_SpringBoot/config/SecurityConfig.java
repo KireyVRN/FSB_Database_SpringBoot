@@ -19,11 +19,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserService userService;
 
-//    @Override
-//    public void configure(WebSecurity web) throws Exception {
-//        web.ignoring().antMatchers("/static/**");
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -34,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/authorization/newUser", "/h2-console/**", "/static/**").permitAll()
+                .antMatchers("/", "/authorization/newUser", "/h2-console/**","/static/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

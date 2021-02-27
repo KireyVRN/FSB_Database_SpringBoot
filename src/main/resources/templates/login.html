@@ -13,8 +13,10 @@
 <div class="login-page">
     <div class="form">
 
+        <img src="../static/login.jpg" style="width:400px; padding-bottom:15px" alt="fsb_pic"/>
+
         <form class="login-form" method="post" action="/authorization/login" th:object="${user}">
-            <input type="text" id="username" name="username"  placeholder="Пользователь"/>
+            <input type="text" id="username" name="username" placeholder="Пользователь"/>
             <input type="password" id="password" name="password" placeholder="Пароль"/>
             <button type="submit">Войти</button>
             <p class="message"><a href="/authorization/newUser">Регистрация</a></p>

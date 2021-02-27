@@ -29,15 +29,15 @@ public class Person {
     private String countryofresidence;
 
     @Column(name = "marriage")
-    @Enumerated(value = EnumType.STRING)
+    @Convert(converter = MarriageConverter.class)
     private Marriage marriage;
 
     @Column(name = "conviction")
-    @Enumerated(value = EnumType.STRING)
+    @Convert(converter = ConvictionConverter.class)
     private Conviction conviction;
 
     @Column(name = "status")
-    @Enumerated(value = EnumType.STRING)
+    @Convert(converter = StatusConverter.class)
     private Status status;
 
     @Column(name = "commentary")
