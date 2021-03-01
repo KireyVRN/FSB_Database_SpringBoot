@@ -1,6 +1,10 @@
 package ru.kireev.FSB_Database_SpringBoot.entities;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
+import ru.kireev.FSB_Database_SpringBoot.converters.ConvictionConverter;
+import ru.kireev.FSB_Database_SpringBoot.converters.MarriageConverter;
+import ru.kireev.FSB_Database_SpringBoot.converters.StatusConverter;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -9,6 +13,7 @@ import javax.validation.constraints.*;
 @Data
 @Entity
 @Table(name = "fsb_database")
+@Accessors(chain = true)
 public class Person {
 
     @Id

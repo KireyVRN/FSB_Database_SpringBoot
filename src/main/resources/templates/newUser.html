@@ -22,7 +22,7 @@
             <input type="text" class="fadeIn second" th:field="*{login}" id="login" placeholder="Введите логин">
             <div style="color:blue" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Error</div>
 
-            <input type="text" class="fadeIn second" th:field="*{password}" id="password" placeholder="Введите пароль">
+            <input type="password" class="fadeIn second" th:field="*{password}" id="password" placeholder="Введите пароль">
             <div style="color:blue" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Error</div>
 
             <div style="color:blue; margin:10px" th:if="${#fields.hasErrors('global')}">

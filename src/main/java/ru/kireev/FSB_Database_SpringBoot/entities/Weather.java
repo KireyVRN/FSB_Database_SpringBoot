@@ -7,7 +7,6 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-
 @Data
 public class Weather {
 
@@ -31,8 +30,9 @@ public class Weather {
         }
 
     }
-//    @Override
-//    public String toString() {
-//        return String.format("%s%n%s%n%s%n%s", "Воронеж " + temperature + " ℃", "Ветер " + windSpeed, "Влажность " + humidity, "Давление " + pressure);
-//    }
+
+    @Override
+    public String toString() {
+        return String.format("%s%n%s%n%s%n%s", "Воронеж " + temperature + " ℃", "Ветер " + windSpeed, "Влажность " + humidity, "Давление " + pressure);
+    }
 }
